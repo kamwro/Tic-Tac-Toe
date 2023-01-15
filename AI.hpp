@@ -41,7 +41,7 @@ public:
     int getBestMove();
 
     // Minimax function based on the Minimax algorithm with addition of alpha-pruning method to save computational time. The idea is to traverse all the possible moves and get the highest move value. One player is maximizer, which will always choose the best move, and another one is minimizer which will choose the worst move for the maximizer every single time.
-    // After searching all the possible moves from the current state, the function will return board's field ID with the highest possible score, when choosing to move there, and its depth.
+    // After searching all the possible moves from the current state, the function will return the best score, when choosing to move there, and its depth.
     std::vector<int> minimax(int depth, int alpha, int beta, bool isMaximizerTurn);
 
     // Calculates a score value for current state on the board (0 for tie, 1 for maximizer win, -1 for minimizer win, -2 for ongoing game). This is the part of the Minimax algorithm.
