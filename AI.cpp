@@ -143,7 +143,7 @@ std::vector<int> AI::minimax(int depth, int alpha, int beta, bool isMaximizerTur
 int AI::evaluateCurrentState()
 {
     GameMaster gm;
-    gm.setTheGameStatus(testingBoard);
+    gm.evaluateTheGameStatus(testingBoard);
     char gameStatus = gm.getTheGameStatus();
 
     if (gameStatus == 'X')

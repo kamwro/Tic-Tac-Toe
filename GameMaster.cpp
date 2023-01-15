@@ -26,7 +26,7 @@ int GameMaster::getGameType()
 }
 void GameMaster::checkTheGameStatus(Board board)
 {
-    setTheGameStatus(board);
+    evaluateTheGameStatus(board);
     if (gameStatus == 'D')
     {
         std::cout << "Draw! Nobody wins.\n";
@@ -47,7 +47,7 @@ void GameMaster::checkTheGameStatus(Board board)
         gameOver();
 }
 
-void GameMaster::setTheGameStatus(Board board)
+void GameMaster::evaluateTheGameStatus(Board board)
 {
     gameStatus = board.getGameStatusForDiagonals();
     if (gameStatus == '1')

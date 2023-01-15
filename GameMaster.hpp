@@ -26,9 +26,8 @@ public:
     // Sets the game status using setTheGameStatus() class method, prints appropiate message regarding current game status and possibly terminating the game by invoking gameOver() method.
     void checkTheGameStatus(Board board);
 
-    // Sets the game status (1 for ongoing game, D for draw, O for player1 win, X for player2 win) by checking if the game is ongoing based on the Board methods (in provided order): getGameStatusForDiagonals(), getGameStatusForRowsAndCols(), isThereFreeField() (for draw).
-    // Beware: this function is not a typical setter. It's automated.
-    void setTheGameStatus(Board board);
+    // evaluates the game status (1 for ongoing game, D for draw, O for player1 win, X for player2 win) by checking if the game is ongoing based on the Board methods (in provided order): getGameStatusForDiagonals(), getGameStatusForRowsAndCols(), isThereFreeField() (for draw).
+    void evaluateTheGameStatus(Board board);
 
     // Returns a game status (1 for ongoing game, D for draw, O for player1 win, X for player2 win).
     char getTheGameStatus();
