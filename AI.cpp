@@ -100,10 +100,9 @@ std::vector<int> AI::minimax(int depth, int alpha, int beta, bool isMaximizerTur
 
                     std::vector<int> tempScoreAndDepth = minimax(depth + 1, alpha, beta, false);
                     int tempScore = tempScoreAndDepth[0];
-                    int tempDepth = tempScoreAndDepth[1];
 
                     testingBoard.updateWithCoords(i, j, ' ');
-
+        
                     bestScore = std::max(bestScore, tempScore);
                     alpha = std::max(alpha, tempScore);
                     if (beta <= alpha)
@@ -126,7 +125,6 @@ std::vector<int> AI::minimax(int depth, int alpha, int beta, bool isMaximizerTur
 
                     std::vector<int> tempScoreAndDepth = minimax(depth + 1, alpha, beta, true);
                     int tempScore = tempScoreAndDepth[0];
-                    int tempDepth = tempScoreAndDepth[1];
 
                     testingBoard.updateWithCoords(i, j, ' ');
 
