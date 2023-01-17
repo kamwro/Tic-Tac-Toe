@@ -5,7 +5,9 @@ int Player::counter = 0;
 
 Player::Player(const char name)
 {
-    this->name = name;
+    if (name == '0') this->name = 'O';
+    else if (name == '1') this->name = 'L';
+    else this->name = name;
     counter++;
     id = counter;
 }
