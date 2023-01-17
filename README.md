@@ -1,6 +1,7 @@
 # Tic Tac Toe
 
-This is a Tic Tac Toe game written in C++ by the learning student of programming. 
+This is a Tic Tac Toe game written in C++ by the learning student of programming.
+You can find my GUI version written in Python here: https://github.com/kamwro/Tic-Tac-Toe-GUI-Python
 
 ## Types of Gameplay
 
