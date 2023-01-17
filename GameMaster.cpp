@@ -24,20 +24,20 @@ int GameMaster::getGameType()
 {
     return gameType;
 }
-void GameMaster::checkTheGameStatus(Board board)
+void GameMaster::checkTheGameStatus(Board board, char player1Name, char player2Name)
 {
     evaluateTheGameStatus(board);
-    if (gameStatus == 'D')
+    if (gameStatus == '0')
     {
         std::cout << "Draw! Nobody wins.\n";
     }
-    else if (gameStatus == 'X')
-    {
-        std::cout << "Player 2 wins!\n";
-    }
-    else if (gameStatus == 'O')
+    else if (gameStatus == player1Name)
     {
         std::cout << "Player 1 wins!\n";
+    }
+    else if (gameStatus == player2Name)
+    {
+        std::cout << "Player 2 wins!\n";
     }
     if (gameStatus == '1')
     {
@@ -57,7 +57,7 @@ void GameMaster::evaluateTheGameStatus(Board board)
         if (board.isThereFreeField())
             gameStatus = '1';
         else
-            gameStatus = 'D';
+            gameStatus = '0';
     }
 }
 

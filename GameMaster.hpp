@@ -24,12 +24,12 @@ public:
     int getGameType();
 
     // Sets the game status using setTheGameStatus() class method, prints appropiate message regarding current game status and possibly terminating the game by invoking gameOver() method.
-    void checkTheGameStatus(Board board);
+    void checkTheGameStatus(Board board, char player1Name, char player2Name);
 
-    // evaluates the game status (1 for ongoing game, D for draw, O for player1 win, X for player2 win) by checking if the game is ongoing based on the Board methods (in provided order): getGameStatusForDiagonals(), getGameStatusForRowsAndCols(), isThereFreeField() (for draw).
+    // evaluates the game status (1 for ongoing game, 0 for draw, player name for player win) by checking if the game is ongoing based on the Board methods (in provided order): getGameStatusForDiagonals(), getGameStatusForRowsAndCols(), isThereFreeField() (for draw).
     void evaluateTheGameStatus(Board board);
 
-    // Returns a game status (1 for ongoing game, D for draw, O for player1 win, X for player2 win).
+    // Returns a game status (1 for ongoing game, 0 for draw, player name for player win).
     char getTheGameStatus();
 
     // Prints the message about the end of the game, pausing the game waiting for user input, and exiting the program by using exit() function.
