@@ -80,6 +80,7 @@ int AI::getBestMove()
 std::vector<int> AI::minimax(int depth, int alpha, int beta, bool isMaximizerTurn)
 {
     int bestScore = evaluateCurrentState();
+    int bestDepth = depth;
 
     if (bestScore == 1 || bestScore == -1 || bestScore == 0)
     {
@@ -103,10 +104,18 @@ std::vector<int> AI::minimax(int depth, int alpha, int beta, bool isMaximizerTur
 
                     testingBoard.updateWithCoords(i, j, ' ');
         
+                    // depth optimization part
+                    if (tempScore > bestScore) bestDepth = depth++;                  
                     bestScore = std::max(bestScore, tempScore);
-                    alpha = std::max(alpha, tempScore);
-                    if (beta <= alpha)
-                        break;
+
+                    //  alpha beta pruning part
+                    if (bestScore >= beta)
+                    {
+                        std::vector<int> bestScoreAndDepth{bestScore, depth};
+                        return bestScoreAndDepth;
+                    }
+                    alpha = std::max(alpha, bestScore);
+ 
                 }
             }
         }
@@ -128,10 +137,17 @@ std::vector<int> AI::minimax(int depth, int alpha, int beta, bool isMaximizerTur
 
                     testingBoard.updateWithCoords(i, j, ' ');
 
+                    // depth optimization part
+                    if (tempScore < bestScore) bestDepth = depth++;                  
                     bestScore = std::min(bestScore, tempScore);
-                    beta = std::min(beta, tempScore);
-                    if (beta <= alpha)
-                        break;
+
+                    //  alpha beta pruning part
+                    if (bestScore <= alpha)
+                    {
+                        std::vector<int> bestScoreAndDepth{bestScore, depth};
+                        return bestScoreAndDepth;
+                    }
+                    beta = std::min(beta, bestScore);
                 }
             }
         }
