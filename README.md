@@ -11,6 +11,10 @@ Player always plays as a first.
 
 You have to download the source and header files, put them in the folder, compile the .cpp files and run the .exe program.
 
+## AI Logic
+
+It uses minimax algorithm with the alpha beta pruning and move's depth comparison.
+
 ## Feedback
 
 More than welcome!
